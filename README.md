@@ -1,6 +1,6 @@
 <div style="background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 50%, #0f172a 100%); border: 1px solid #1e293b; padding: 60px 40px; border-radius: 8px; text-align: center;">
   <h1 style="color: #60a5fa; margin-bottom: 10px;">📬 Mail Spam Predictor</h1>
-  <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto; line-height: 1.8;">></p>
+  <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto; line-height: 1.8;"></p>
 </div>
 
 ## I. Introduction
