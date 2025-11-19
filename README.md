@@ -1,162 +1,196 @@
-<div style="background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 50%, #0f172a 100%); border: 1px solid #1e293b; padding: 60px 40px; border-radius: 8px; text-align: center;">
-  <h1 style="color: #60a5fa; margin-bottom: 10px;">📬 Mail Spam Predictor</h1>
-  <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto; line-height: 1.8;"></p>
-</div>
+✉️ Mail Spam Predictor
+<p align="center"> <img src="banner.png" width="100%"> </p>
 
-## I. Introduction
+A complete, end-to-end machine learning pipeline for classifying SMS/email messages as spam or ham.
+Built using Python, Pandas, TF-IDF vectorization, and Logistic Regression, this project demonstrates the essential workflow behind classical NLP-based text classification.
 
-Every message carries a shape.
+Clean preprocessing.
+Structured feature engineering.
+Reliable, explainable modeling.
 
-> Some are conversational fragments.  
-> Some are transactions.  
-> Some attempt persuasion.  
-> Some are quiet traps wrapped in promises.
+📌 Project Overview
 
-This project studies that shape.
+Spam detection is one of the most practical and widely deployed NLP applications.
+This project uses a dataset of 5,572 text messages and applies:
 
-The notebook <code>Mail_Spam_Predictor.ipynb</code> captures thousands of raw messages, strips them down to their linguistic spine, converts them to weighted vectors, and trains a model to draw a boundary between the authentic and the unwanted.
+Text cleaning
 
-It is machine learning reduced to its most essential motion:
-<br>
-<kbd>observe → transform → learn → decide.</kbd>
+Label encoding
 
----
+TF-IDF feature extraction
 
-## II. The Concept
+Train/test split
 
-Text is not random.<br>
-Spam has a signature — urgency, reward cues, compressed intent.<br>
-Ham has rhythm, natural phrasing, and context.
+Logistic Regression training
 
-- **TF-IDF** reveals these signatures.<br>
-- **Logistic Regression** interprets them.<br>
-- **Accuracy** validates the interpretation.
+Model evaluation
 
-What begins as unstructured language becomes a geometric space where classification is simply geometry.
+Model export (.pkl)
 
----
+Everything is implemented in a single, clear Jupyter/Colab Notebook:
 
-## III. Repository Structure
+Mail_Spam_Predictor.ipynb
 
-```
-Mail-Spam-Predictor/
+🧠 Key Features
+
+Converts raw SMS/email text into numerical vectors using TF-IDF
+
+Classifies messages as spam or ham
+
+Achieves strong generalization (~96% accuracy)
+
+Saves trained model + vectorizer for reuse
+
+Beginner-friendly, industry-aligned ML workflow
+
+Cleanly written, reproducible, minimal dependencies
+
+📂 Repository Structure
+📦 Mail-Spam-Predictor
 │
-├── Mail_Spam_Predictor.ipynb     # The full workflow
-├── mail_data.csv                 # Dataset (if included)
+├── Mail_Spam_Predictor.ipynb      # Full ML workflow
+├── mail_data.csv                  # Dataset (optional)
 │
 └── model/
-    ├── model.pkl                 # Learned decision boundary
-    └── vect.pkl                  # TF-IDF transformation rules
-```
+    ├── model.pkl                  # Trained classifier
+    └── vect.pkl                   # TF-IDF vectorizer
 
-This is a minimal, committed architecture.<br>
-Everything in the project exists for a reason.
+⚙️ How the System Works
+1️⃣ Importing Dependencies
 
----
+The notebook loads NumPy, Pandas, scikit-learn, and joblib to handle data, NLP, and modeling.
 
-## IV. Workflow Overview
+2️⃣ Data Loading & Cleaning
 
-### 1. Acquisition
+Load the dataset
 
-Messages are loaded into a clean DataFrame and stripped of nulls to create uniformity.
+Replace null values with empty strings
 
-### 2. Normalization
+Inspect sample messages
 
-Labels are brought into numeric clarity:
-- <code>ham  → 0</code>
-- <code>spam → 1</code>
+Normalize category labels (spam, ham)
 
-### 3. Division
+3️⃣ Label Encoding
+ham  → 0  
+spam → 1
 
-The dataset is partitioned:<br>
-one part for learning, one for proving.
 
-### 4. Transformation
+This converts categories into a clean binary form.
 
-TF-IDF translates words into weighted signals — a vocabulary turned into vectors.
+4️⃣ Train/Test Split
 
-### 5. Learning
+The dataset is split:
 
-Logistic Regression absorbs the signals and builds a boundary, a quiet algorithm with quiet strength.
+80% → training
 
-### 6. Evaluation
+20% → testing
 
-The results form a near-perfect mirror:
-- Training accuracy : <b>~96.7%</b>
-- Testing accuracy  : <b>~96.8%</b>
+This allows unbiased evaluation.
 
-A model that doesn’t memorize, but genuinely understands pattern.
+5️⃣ TF-IDF Feature Extraction
 
-### 7. Preservation
+Text is mapped into numerical space using:
 
-Both the classifier and the vectorizer are exported.<br>
-Knowledge becomes a reusable artifact.
+TfidfVectorizer(min_df=1, stop_words='english', lowercase=True)
 
----
 
-## V. Using the Model
+TF-IDF preserves:
 
-```python
+important words
+
+relative importance
+
+sparsity of message patterns
+
+6️⃣ Logistic Regression Model
+
+A classical, effective approach for high-dimensional sparse text.
+
+The notebook trains a classifier that separates spam-like word patterns from normal conversation.
+
+7️⃣ Accuracy Evaluation
+
+Training Accuracy: ~96.7%
+Testing Accuracy: ~96.8%
+
+A strong signal with minimal overfitting.
+
+8️⃣ Model Export
+
+Both the trained classifier and vectorizer are saved:
+
+model/model.pkl
+model/vect.pkl
+
+
+These can be loaded anywhere for predictions.
+
+🚀 Prediction Example
 import joblib
 
 model = joblib.load("model/model.pkl")
-vect  = joblib.load("model/vect.pkl")
+vectorizer = joblib.load("model/vect.pkl")
 
-text = ["Congratulations! You won a reward."]
-features = vect.transform(text)
+msg = ["Congratulations! You won a free ticket. Claim now!"]
+features = vectorizer.transform(msg)
 
-model.predict(features)   # → 1   (spam)
-```
+print(model.predict(features))   # Output: 1 (spam)
 
-Minimal input.  
-Clear decision.
+🔧 Installation & Usage
+Install requirements
+pip install -r requirements.txt
 
----
+Run notebook
 
-## VI. Why This Project Works
+Open:
 
-This notebook is intentionally restrained.
-- No excessive preprocessing.
-- No deep neural networks.
-- No ceremony.
+Mail_Spam_Predictor.ipynb
 
-It demonstrates the fundamental craft of NLP:
 
-- **define the problem**
-- **respect the data**
-- **transform appropriately**
-- **model with clarity**
-- **validate with discipline**
+Run cells → view outputs → generate predictions.
 
-What remains is a clean, conceptual, well-executed blueprint of text classification.
+🌈 Tech Stack
 
----
+Python
 
-## VII. Aesthetic Identity
+NumPy
 
-This repository is designed with a particular tone:
+Pandas
 
-- Restrained typography
-- Soft geometric alignment
-- Quiet color palette (in banner & visual identity)
-- Minimal structural clutter
-- Emphasis on conceptual flow rather than ornament
+Scikit-Learn
 
-It presents machine learning not as machinery, but as a form of analytical composition.
+Joblib
 
----
+Colab / Jupyter Notebook
 
-## VIII. Closing Perspective
+🧩 Ideal For
 
-Spam detection is a practical task, but beneath it lies a deeper idea:
+ML students
 
-> **Language has patterns.**  
-> **Meaning has boundaries.**  
-> **Data has shape.**  
-> **Models merely reveal what has always been there.**
+NLP beginners
 
-This repository is a study of that shape — curated, distilled and presented with precision.
+Academic assignments
 
-<p align="center">
-  <img src="assets/mail_spam_footer.svg" alt="Footer Art" width="280px">
+Portfolio projects
+
+Real-world spam detection demos
+
+Understanding classical ML models with text
+
+🧑‍💻 Author
+
+Rumaisa Fatima
+Machine Learning Enthusiast • Full Stack Developer
+
+🌐 GitHub: https://github.com/rumaisafatima
+
+💡 "Models learn patterns. Engineers learn why the patterns matter."
+
+<br> <p align="center"> <img src="https://img.shields.io/badge/AI-Powered-7030f0?style=for-the-badge&labelColor=1a1a1a" /> <img src="https://img.shields.io/badge/Text%20Classification-0d6efd?style=for-the-badge&labelColor=1a1a1a" /> <img src="https://img.shields.io/badge/NLP-TF--IDF-6c63ff?style=for-the-badge&labelColor=1a1a1a" /> <img src="https://img.shields.io/badge/Model-Logistic%20Regression-4ad1c7?style=for-the-badge&labelColor=1a1a1a" /> <img src="https://img.shields.io/badge/Engineered%20By-Shameer%20Ahmad-2c8cff?style=for-the-badge&labelColor=1a1a1a" />
+
+<br><br>
+
+Crafted with clarity. Designed with purpose.
+Spam filtered with intelligence.
+
 </p>
