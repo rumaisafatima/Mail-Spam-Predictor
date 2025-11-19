@@ -157,38 +157,4 @@ Spam detection is a practical task, but beneath it lies a deeper idea:
 
 This repository is a study of that shape — curated, distilled and presented with precision.
 
-<hr />
-
-<p align="center">
-  <img src="https://img.shields.io/badge/LANGUAGE-Python-blue.svg?style=flat-square&logo=python&logoColor=white">
-  &nbsp;
-  <img src="https://img.shields.io/badge/ML-Logistic%20Regression-green.svg?style=flat-square">
-  &nbsp;
-  <img src="https://img.shields.io/badge/VECTOR-TF--IDF-9cf.svg?style=flat-square">
-</p>
-
-<p align="center" style="margin-top:16px;">
-  <img src="https://raw.githubusercontent.com/rumaisafatima/Mail-Spam-Predictor/assets/footer_art.svg" alt="Footer Art" width="280px">
-</p>
-
-<p align="center">
-  <sup>
-    <b>Mail Spam Predictor</b> | made with <img height="14" src="https://img.icons8.com/color/48/like--v1.png" style="transform:translateY(2px);" /> by <a href="https://github.com/rumaisafatima">rumaisafatima</a>
-  </sup>
-</p>
-<svg width="240" height="32" viewBox="0 0 240 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="240" height="32" rx="16" fill="url(#ftr-grad)" />
-  <g opacity="0.23">
-    <ellipse cx="54" cy="24" rx="25" ry="6" fill="#2e83af"/>
-    <ellipse cx="186" cy="8" rx="29" ry="10" fill="#7eb6df"/>
-  </g>
-  <text x="120" y="23" text-anchor="middle" font-family="'Fira Mono', monospace" font-size="13" fill="#2e83af" opacity="0.85">
-    — observe  ·  transform  ·  decide —
-  </text>
-  <defs>
-    <linearGradient id="ftr-grad" x1="0" y1="0" x2="240" y2="32" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#e3effa"/>
-      <stop offset="1" stop-color="#b8d5ef"/>
-    </linearGradient>
-  </defs>
-</svg>
+[![Mail Spam Predictor Footer](footer.svg)](/)
