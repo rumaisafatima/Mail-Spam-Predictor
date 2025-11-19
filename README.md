@@ -158,5 +158,5 @@ Spam detection is a practical task, but beneath it lies a deeper idea:
 This repository is a study of that shape — curated, distilled and presented with precision.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/rumaisafatima/Mail-Spam-Predictor/main/assets/mail_spam_footer.svg" alt="Footer Art" width="280px">
+  <img src="assets/mail_spam_footer.svg" alt="Footer Art" width="280px">
 </p>
