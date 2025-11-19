@@ -1,45 +1,7 @@
-<svg width="1000" height="180" viewBox="0 0 1000 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1000" height="180" rx="36" fill="url(#a)" />
-  <g>
-    <!-- Envelope backdrop -->
-    <rect x="360" y="40" width="280" height="80" rx="26" fill="#fff8" />
-    <rect x="370" y="52" width="260" height="60" rx="20" fill="#fff" />
-    <polyline points="370,52 500,110 630,52" fill="none" stroke="#7eb6df" stroke-width="5"/>
-    <!-- Mail seal -->
-    <circle cx="500" cy="83" r="14" fill="#7eb6df" stroke="#fff" stroke-width="6" />
-    <text x="500" y="90" text-anchor="middle" fill="#fff" font-family="monospace" font-size="18" font-weight="bold" opacity="0.82">📬</text>
-  </g>
-  <text x="500" y="38" text-anchor="middle" font-size="34" fill="#1b2334" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" letter-spacing="2">
-    MAIL SPAM PREDICTOR
-  </text>
-  <text x="500" y="150" text-anchor="middle" font-size="19" fill="#405266cc" font-family="Fira Mono, monospace">
-    Language has a shape. Patterns have a boundary.
-  </text>
-  <defs>
-    <linearGradient id="a" x1="0" y1="0" x2="1000" y2="180" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#e3effa"/>
-      <stop offset="0.5" stop-color="#dbeafd"/>
-      <stop offset="1" stop-color="#b8d5ef"/>
-    </linearGradient>
-  </defs>
-</svg>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rumaisafatima/Mail-Spam-Predictor/assets/banner.svg" alt="MAIL SPAM PREDICTOR Banner" width="70%" style="border-radius:20px; box-shadow:0 2px 16px #a2abbf33;">
-</p>
-
-<h1 align="center">
-  <img alt="Mail Icon" src="https://img.icons8.com/doodle/48/000000/email-open.png"/>
-  <span style="color:#2b3648;">MAIL SPAM PREDICTOR</span>
-</h1>
-
-<p align="center" style="font-size:1.15em;">
-  <em>
-    A notebook that turns language into structure,<br>
-    structure into patterns, and patterns into decisions.
-  </em>
-</p>
-
----
+<div style="background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 50%, #0f172a 100%); border: 1px solid #1e293b; padding: 60px 40px; border-radius: 8px; text-align: center;">
+  <h1 style="color: #60a5fa; margin-bottom: 10px;">📬 Mail Spam Predictor</h1>
+  <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto; line-height: 1.8;">Every message carries a shape. Machine learning reduced to its most essential motion: <strong>Observe → Transform → Learn → Decide</strong></p>
+</div>
 
 ## I. Introduction
 
