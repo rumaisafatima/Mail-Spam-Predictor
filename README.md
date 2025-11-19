@@ -1,5 +1,5 @@
 ✉️ Mail Spam Predictor
-<p align="center"> <img src="banner.png" width="100%"> </p>
+<p align="center"> <img src="banner.png" width="80%"> </p>
 
 A complete, end-to-end machine learning pipeline for classifying SMS/email messages as spam or ham.
 Built using Python, Pandas, TF-IDF vectorization, and Logistic Regression, this project demonstrates the essential workflow behind classical NLP-based text classification.
